@@ -45,7 +45,7 @@
     } else {
         NSString *xcTestsPath = [hostAppPath stringByAppendingPathComponent:@"PlugIns"];
         if (!([fm fileExistsAtPath:xcTestsPath isDirectory:&isdir]) && isdir) {
-            NSLog(@"There is .xctest file under %@", xcTestsPath);
+            NSLog(@"There isn't .xctest file under %@", xcTestsPath);
         }
 
         NSArray *unitTestFiles = [self testFilesFromDirectory:xcTestsPath isUITestBundle:NO withError:error];
@@ -61,7 +61,7 @@
             NSString *xcTestsPath = [config.testRunnerAppPath stringByAppendingPathComponent:@"PlugIns"];
             NSArray *uiTestFiles = [self testFilesFromDirectory:xcTestsPath isUITestBundle:YES withError:error];
             if (!([fm fileExistsAtPath:xcTestsPath isDirectory:&isdir]) && isdir) {
-                NSLog(@"There is .xctest file under %@", xcTestsPath);
+                NSLog(@"There isn't .xctest file under %@", xcTestsPath);
             }
             if (uiTestFiles) {
                 [allUITestFiles addObjectsFromArray:uiTestFiles];
