@@ -81,7 +81,7 @@
     }
 
     if (config.additionalUITestBundles) {
-        for (NSString *testBundle in config.additionalUnitTestBundles) {
+        for (NSString *testBundle in config.additionalUITestBundles) {
             BPXCTestFile *testFile = [self testFileFromXCTestPath:testBundle isUITestBundle:NO withError:error];
             [allUnitTestFiles addObject:testFile];
         }
